@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf); }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+  background: url(../uploads/test.jpg); }
+  body::after {
+    content: 'test scss';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/logo.svg); }
+
+
+/*# sourceMappingURL=style.bundle.css.map*/

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+body {
+    font-family: $font-stack;
+    background: url(../uploads/test.jpg);
+    &::after {
+        content: 'test scss';
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url(../img/logo.svg);
+    }
+}
