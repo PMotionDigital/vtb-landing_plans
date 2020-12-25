@@ -1,1 +1,33 @@
-$font-stack: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+// colors
+
+$blue: #002BAB;
+$blue2:#2237ff;
+$blue3: #01A8FF;
+$blueLight: #F4F8FB;
+$white : #fff;
+$black : #2F3441;
+$grey: #979797;
+$green: #28BFAD;
+$pink : #FFB8B8;
+
+$red : #ED1B25;
+
+// margins
+
+@mixin clearTagUl {
+    list-style: none;
+}
+
+@mixin clearTagA {
+    text-decoration: none;
+    color: $black;
+}
+
+@mixin objectFitCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

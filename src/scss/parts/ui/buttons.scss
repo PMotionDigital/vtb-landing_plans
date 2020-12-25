@@ -1,0 +1,50 @@
+button {
+    outline: none;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+
+.button {
+    display: inline-block;
+    color: $white;
+    font-size: inherit;
+    padding: 1rem 3.75rem;
+    border: none;
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    font-size: .85rem;
+    background: linear-gradient(90deg, #0037FF 0%, #0085FF 75%);
+
+    &--disabled {
+        pointer-events: none;
+        filter: grayscale(1);
+        opacity: .3;
+    }
+
+    &:hover {
+        opacity: .85;
+    }
+    &.type-2 {
+        background: $white;
+        color: $blue;
+    }
+}
+
+.button-link {
+    text-decoration: none;
+    color: $blue3;
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    &:hover {
+        opacity: .85;
+    }
+}

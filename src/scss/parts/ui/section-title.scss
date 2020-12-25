@@ -1,0 +1,61 @@
+.section-title {
+    &.type-1 {
+        & > * {
+            font-size: 4.8rem;
+            line-height: 1.12;
+        }
+    }
+    &.type-2 {
+        & > * {
+            font-size: 3.2rem;
+        }
+    }
+    &.type-3 {
+        & > * {
+            font-size: 2.4rem;
+            color: $blue;
+        }
+    }
+}
+
+// для обмилок
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section-title {
+        &.type-1 {
+            & > * {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 767px) {
+    .section-title {
+        &.type-1 {
+            & > * {
+                font-size: 2rem;
+            }
+        }
+        &.type-2 {
+            & > * {
+                font-size: 1.5rem;
+            }
+        }
+        &.type-3 {
+            & > * {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .section-title {
+        &.type-1 {
+            & > * {
+                font-size: 3.5rem;
+            }
+        }
+    }
+}

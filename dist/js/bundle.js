@@ -10979,56 +10979,140 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _parts_test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/test */ "./src/js/parts/test.js");
-/* harmony import */ var _parts_test2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/test2 */ "./src/js/parts/test2.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _parts_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/validate */ "./src/js/parts/validate.js");
+/* harmony import */ var _parts_validate__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_parts_validate__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 // files
 
 //
+//import test from './parts/test2';
 
-
-
-console.log(_parts_test2__WEBPACK_IMPORTED_MODULE_1__["default"].obj);
-jquery__WEBPACK_IMPORTED_MODULE_2___default()(function() {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()("body").css("color", "blue");
-});
 
 
 /***/ }),
 
-/***/ "./src/js/parts/test.js":
-/*!******************************!*\
-  !*** ./src/js/parts/test.js ***!
-  \******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/js/parts/validate.js":
+/*!**********************************!*\
+  !*** ./src/js/parts/validate.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-//
+const urlPost = '/test.json'; // URL test
+
+const emailInput = document.querySelector('input[type="email"]');
+const inputCheck = document.querySelector('input[type="checkbox"]');
+const inputSubmit = document.querySelector('button[type="submit"]');
+const text = document.querySelector('textarea');
+const formInputs = document.querySelectorAll('input');
+
+let correct;
+let checked;
+let filled;
+
+inputSubmit.classList.add('button--disabled');
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').append(`<h2>testh2</h2>`);
+emailInput.addEventListener('change', (evt) => {
+    const currentValue = evt.target.value;
+    const parent = emailInput.closest('.input-row');
+    const error = parent.querySelector('.error-message');
 
-/***/ }),
+    if (!currentValue.includes('@')) {
+        errorMessage('E-mail должен содержать "@"', parent);
+        parent.classList.add('input-row--uncorrect');
+        parent.classList.remove('input-row--correct');
 
-/***/ "./src/js/parts/test2.js":
-/*!*******************************!*\
-  !*** ./src/js/parts/test2.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+        correct = false;
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const obj = 'test';
+    } else {
+        parent.classList.remove('input-row--uncorrect', 'input-row--error-border');
+        parent.classList.add('input-row--correct');
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-	obj
+        if(error){
+            error.remove();
+        }
+
+        correct = true;
+    }
 });
+
+function errorMessage(text, element) {
+    const oldMessage = element.querySelector('.error-message') || undefined;
+    if (oldMessage) {
+        oldMessage.remove();
+    }
+    const el = document.createElement('span');
+    el.classList.add('error-message');
+    el.textContent = text;
+    element.appendChild(el);
+}
+
+text.addEventListener('input', () => {
+    if (text.value !== ''){
+        filled = true;
+    } else {
+        filled = false;
+    }
+})
+
+
+
+// проверяем кликнут ли обязательный чекбокс
+
+inputCheck.addEventListener('change', () => {
+    if (inputCheck.checked) {
+        checked = true;
+    } else {
+        checked = false;
+    }
+});
+
+
+
+// проверяем корректность заполнения полей
+
+formInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+        if (input.value !== '' && checked && correct && filled){
+            inputSubmit.classList.remove('button--disabled');
+        } else {
+            inputSubmit.classList.add('button--disabled');
+        }
+    })
+});
+
+
+
+
+inputSubmit.addEventListener('click', (evt) => {
+    evt.preventDefault();
+
+    const data = {
+        name: document.querySelector('input[data-name]').value,
+        email: emailInput.value,
+        message: text.value
+    }
+
+    loadData(data);
+})
+
+
+
+// Функция пост-запроса
+
+function loadData (data) {
+    fetch(urlPost, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(result => console.log(data));
+}
 
 /***/ }),
 

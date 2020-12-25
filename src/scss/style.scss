@@ -1,4 +1,19 @@
 @import './parts/vars';
 //
 @import './parts/main';
+@import './parts/intro';
+@import './parts/front-page';
+
+@import './parts/header/main-header.scss';
+@import './parts/footer/footer.scss';
+
+@import './parts/ui/buttons.scss';
+@import './parts/ui/images.scss';
+@import './parts/ui/inputs.scss';
+@import './parts/ui/section-title.scss';
+@import './parts/ui/text-politic.scss';
+
+
+@import './libs/grid.scss';
+@import './responsive/responsive.scss';
 

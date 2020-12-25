@@ -1,0 +1,82 @@
+.text-block {
+
+    a,
+    button {
+        color: $blue3;
+        border-bottom: 2px solid rgba($blue3, .2);
+        font-size: inherit;
+    }
+
+    button:not([type="submit"]) {
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    // Заголовки
+    h2 {
+        font-size: 2.5rem;
+        line-height: 1.23;
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: .85rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    ul {
+        list-style: none;
+        li {
+            position: relative;
+            padding-left: 1rem;
+            font-size: .85rem;
+            &:before {
+                content: '';
+                position: absolute;
+                top: .4rem;
+                left: 0;
+                width: .3rem;
+                height: .3rem;
+                border-radius: 100%;
+                background-color: $blue2;
+            }
+            &:not(:last-child) {
+                margin-bottom: .75rem;
+            }
+        }
+    }
+    h3 {
+        font-size: 1.45rem;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    h5 {
+        font-size: .95rem;
+    }
+    h1,h2,h3,h4,h5 {
+        margin: 2.5rem 0 1.3rem 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    // ссылки
+
+    a {
+        @include clearTagA;
+        color: $blue3;
+    }
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: normal;
+}
+
+.small-grey {
+    font-size: .85rem;
+    color: $grey;
+}
