@@ -1,14 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/css/style.bundle.css">
+    
+	<title>Строим инвестиционные планы на 2021 год! | ВТБ</title>
+    <link rel="stylesheet" href="/dist/css/style.bundle.css" type="text/css" media="all" />
+    <link rel="icon" href="/dist/img/favicon.png" />
 </head>
 <body>
+    <div class="main-header_top header-top">
+        <div class="wrapper dis-flex align-items-center justify-content-between">
+            <div class="header-top_title">
+                <a href="/">
+                    <img src="/dist/img/logo.svg">
+                </a>
+            </div>
+            <div class="header-top_logo site-logo">
+            <a href="https://school.moex.com/" target="_blank">
+                    <img src="/dist/img/logo_mos.svg">
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <h1>fdsafes</h1>
-    <script src="dist/js/bundle.js"></script>
+    <main>
+        <section class="intro">
+            <div class="section-title type-2 wrapper">
+                <h1 class="col-lg-10 col-xs-12">Строим инвестиционные планы на 2021 год!</h1>
+            </div>
+            <img src="/dist/img/background.png" alt="" class="intro_image">
+        </section>
+
+        <section class="description">
+            <div class="wrapper dis-flex justify-content-center">
+                <div class="description_desc col-lg-10 col-xs-12 dis-flex flex-direction-col align-items-center">
+                    <h2>Сотрудники ВТБ поделились с вами своими планами на 2021 год. </h2>
+                    <p class="col-lg-9 col-xs-12">Кто-то хочет впервые купить акции фармацевтических 
+                        компаний, кто-то — расширить кругозор по работе с брокером, кто-то — создать ликвидный портфель. 
+                        А что нового планируете вы? Поделитесь своими идеями, а мы в течение года поможем вам с реализацией этих планов!</p>
+                </div>
+            </div>
+            <div class="form-main col-lg-6 col-xs-12 wrapper">
+                <div class="input-row">
+                    <input type="text" placeholder="Имя Фамилия" required data-name>
+                </div>
+                <div class="input-row">
+                    <input type="email" placeholder="E-mail" required data-mail>
+                </div>
+                <div class="input-row">
+                    <textarea maxlength="500" placeholder="Ваша цель на 2021 год" required data-target></textarea>
+                </div>
+                <div class="input-row">
+                    <input type="checkbox" class="input-checkbox" id="personal">
+                    <label for="personal" class="checkbox-label">Я даю согласие на обработку персональных данных</label>
+                </div>
+            </div>
+            <button type="submit" class="button form-button" data-get-certificate>Отправить!</button>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="wrapper">
+            <div class="footer-widget site-logo">
+                <a href="/">
+                    <img src="/dist/img/logo.svg">
+                </a>
+            </div>
+            <div class="footer-widget main-socials">
+                <a href="https://www.facebook.com/vtbrussia/" target="_blank">
+                    <img src="/dist/img/icons/fb.svg">
+                </a>
+                <a href="https://www.instagram.com/bankvtb/" target="_blank">
+                    <img src="/dist/img/icons/inst.svg">
+                </a>
+                <a href="https://vk.com/vtb" target="_blank">
+                    <img src="/dist/img/icons/vk.svg">
+                </a>
+                <a href="https://twitter.com/VTB" target="_blank">
+                    <img src="/dist/img/icons/tw.svg">
+                </a>
+                <!-- <a href="#" target="_blank">
+                    <img src="/dist/img/icons/tg.svg">
+                </a> -->
+            </div>
+            <div class="footer-widget">
+                <button data-modal-btn="policy">Согласие на обработку персональных данных</button>
+            </div>
+            <div class="footer-widget dis-flex justify-content-end">
+                <div class="header-top_logo site-logo">
+                    <a href="https://school.moex.com/" target="_blank">
+                        <img src="/dist/img/logo_mos.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts connected -->
+    <script src="/dist/js/bundle.js"></script>
 </body>
 </html>
