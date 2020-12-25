@@ -16,10 +16,5 @@
                     <img src="/dist/img/logo.svg">
                 </a>
             </div>
-            <div class="header-top_logo site-logo">
-            <a href="https://school.moex.com/" target="_blank">
-                    <img src="/dist/img/logo_mos.svg">
-                </a>
-            </div>
         </div>
     </div>

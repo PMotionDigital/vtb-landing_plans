@@ -3,7 +3,7 @@
     padding: 1.8rem 0;
     .wrapper {
         display: grid;
-        grid-template-columns: repeat(4,4fr);
+        grid-template-columns: repeat(3,3fr);
         grid-gap: 1rem;
     }
 
@@ -13,13 +13,6 @@
 
         a{
             display: block;
-        }
-
-        &:last-of-type{
-            img{
-                display: block;
-                margin-left: auto;
-            }
         }
     }
 
@@ -58,7 +51,11 @@
         // }
     }
 
-    .main-socials a{
+    .main-socials{
+        //justify-content: center;
+    }
+
+    .main-socials a:not(:last-child){
         margin-right: .85rem;
     }
 }
@@ -88,9 +85,8 @@
             order: -1;
             justify-content: center;
             
-            &:first-child,
-            &:last-child{
-                width: 45%;
+            &:first-child{
+                //width: 45%;
                 order: 3;
             }
         }

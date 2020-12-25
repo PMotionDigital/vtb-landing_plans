@@ -25,13 +25,6 @@
             <div class="footer-widget">
                 <button data-modal-btn="policy">Согласие на обработку персональных данных</button>
             </div>
-            <div class="footer-widget dis-flex justify-content-end">
-                <div class="header-top_logo site-logo">
-                    <a href="https://school.moex.com/" target="_blank">
-                        <img src="/dist/img/logo_mos.svg">
-                    </a>
-                </div>
-            </div>
         </div>
     </footer>
     <!-- scripts connected -->
