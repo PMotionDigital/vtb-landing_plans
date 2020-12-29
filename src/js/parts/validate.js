@@ -1,4 +1,4 @@
-const urlPost = '/test.json'; // URL test
+const urlPost = 'https://pmotion.ru/vtb_land/dist/test.json'; // URL test
 
 const emailInput = document.querySelector('input[type="email"]');
 const inputCheck = document.querySelector('input[type="checkbox"]');

@@ -27,6 +27,8 @@
             </div>
         </div>
     </footer>
+    <!-- modals -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/modals/modal-policy.php'; ?>
     <!-- scripts connected -->
     <script src="/dist/js/bundle.js"></script>
 </body>

@@ -10981,12 +10981,59 @@ return jQuery;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_validate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parts/validate */ "./src/js/parts/validate.js");
 /* harmony import */ var _parts_validate__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_parts_validate__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js");
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
 // files
+
 
 //
 //import test from './parts/test2';
+
+
+
+/***/ }),
+
+/***/ "./src/js/parts/modal.js":
+/*!*******************************!*\
+  !*** ./src/js/parts/modal.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Общие правила логики абсолютно для всех модалок
+
+const modal = document.querySelectorAll('[data-modal]');
+const modalBtn = document.querySelectorAll('[data-modal-btn]');
+const modalClose = document.querySelectorAll('[data-modal-close]');
+
+// вешаем событие открытие модалки на кнопку
+
+modalBtn.forEach((btn)=> {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        let _this = e.currentTarget;
+        let curModal = _this.dataset['modalBtn'];
+    
+        //modal.classList.remove('modal--open');
+        document.querySelector(`[data-modal="${curModal}"]`).classList.add('modal--open');
+    });
+});
+
+// закрываем модалку
+
+modalClose.forEach((btn)=> {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        let _this = e.currentTarget;
+    
+        _this.closest('[data-modal]').classList.remove('modal--open');
+    
+    })
+})
 
 
 
@@ -10999,7 +11046,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-const urlPost = '/test.json'; // URL test
+const urlPost = 'https://pmotion.ru/vtb_land/dist/test.json'; // URL test
 
 const emailInput = document.querySelector('input[type="email"]');
 const inputCheck = document.querySelector('input[type="checkbox"]');
